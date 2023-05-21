@@ -1,0 +1,28 @@
+package tests;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class TestArticulos {
+
+	@PersistenceContext(unitName = "Persistencia")
+	
+	private static EntityManager manager;
+	
+	private static EntityManagerFactory emf;
+	
+	private static void main(String[] args) {
+		
+		/*Creamos gestor de persistencia EM */
+		
+		emf = Persistence.createEntityManagerFactory("Persistencia");
+		manager = emf.createEntityManager();
+		
+		manager.createQuery("FROM Articulos");
+		
+		List<Articulos> articulos = (List<Articulos>) manager.createQuery("FROM Articulos").getResultList();
+	}
+}

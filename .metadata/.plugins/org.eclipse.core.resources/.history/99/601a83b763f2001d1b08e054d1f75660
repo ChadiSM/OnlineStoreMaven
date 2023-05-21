@@ -1,0 +1,5 @@
+package Modelo.excepcion;
+
+public class AlredyExistsException {
+
+}

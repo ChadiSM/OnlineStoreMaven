@@ -1,0 +1,14 @@
+package tests;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+public class TestArticulos {
+
+	@PersistenceContext(unitName = "Persistencia")
+	private static EntityManager manager;
+	
+	private static void main(String[] args) {
+		manager.
+	}
+}
